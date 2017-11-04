@@ -10,11 +10,26 @@
 		<div class="reset"><a href="http://localhost/reset.html" >Reset</a></div>
 
 		<script src="jscolor.js"></script>
+
+
+
+		<h2>Example 1</h2>
 		Color: <input class="jscolor" value="ab2567">
-    
-    <form action="/action.php" method="post">
-      Name: <input name="name" type="text" /> <br /> 
-      <input type="submit" value="Submit" />
-    </form>
+
+
+
+		<h2>Example 2</h2>
+
+		<button class="jscolor {valueElement:'chosen-value', onFineChange:'setTextColor(this)'}">
+			Pick text color
+		</button>
+
+		HEX value: <input id="chosen-value" value="000000">
+
+		<script>
+		function setTextColor(picker) {
+			document.getElementsByTagName('body')[0].style.color = '#' + picker.toString()
+		}
+		</script>
 	</body>
 </html>
