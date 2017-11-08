@@ -3,7 +3,9 @@
 			// Checking For Blank Fields..
 			if($_POST["color"]==""{
 			echo "Fill All Fields..";
-			}
-			$hexval = $_POST['color'];
-			echo '<a href="mycgi?hex=', urlencode($hexval), '">';
+			} 
+			$hex = $_GET['hexval']; 
+  			$file = fopen("light.json", "w") or die("can't open file");
+  			fwrite($file, '{"hex": $hex}');
+  			fclose($file);
  ?>
